@@ -258,15 +258,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenRecommendation, onOpenResume }
               <div className="grid grid-cols-2 gap-3">
                 <div className="p-3 rounded-xl bg-stone-50 dark:bg-stone-800/50 border border-stone-100 dark:border-stone-800">
                   <div className="text-xl font-extrabold text-stone-900 dark:text-stone-100 font-mono">
-                    2 Engineers
-                  </div>
-                  <div className="text-[11px] text-stone-500 dark:text-stone-400 leading-tight mt-0.5">
-                    Core team building Sprinklr Ads Creative App
-                  </div>
-                </div>
-
-                <div className="p-3 rounded-xl bg-stone-50 dark:bg-stone-800/50 border border-stone-100 dark:border-stone-800">
-                  <div className="text-xl font-extrabold text-stone-900 dark:text-stone-100 font-mono">
                     AIR 1912
                   </div>
                   <div className="text-[11px] text-stone-500 dark:text-stone-400 leading-tight mt-0.5">
@@ -289,6 +280,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenRecommendation, onOpenResume }
                   </div>
                   <div className="text-[11px] text-stone-500 dark:text-stone-400 leading-tight mt-0.5">
                     Published in @aryan_sehgal/forma-ui on npm
+                  </div>
+                </div>
+
+                <div className="p-3 rounded-xl bg-stone-50 dark:bg-stone-800/50 border border-stone-100 dark:border-stone-800">
+                  <div className="text-xl font-extrabold text-stone-900 dark:text-stone-100 font-mono leading-tight">
+                    Class XII: 90% | Class X: 10 CGPA
+                  </div>
+                  <div className="text-[11px] text-stone-500 dark:text-stone-400 leading-tight mt-1">
+                    Central Board of Secondary Education (CBSE)
                   </div>
                 </div>
               </div>
