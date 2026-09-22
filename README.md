@@ -95,7 +95,7 @@ Includes the verified executive endorsement from **Mayank Hinger**, Vice Preside
 
 ### Build, Tooling & Delivery
 - **Bundler & Server**: Vite 8, Express 4 / Node.js
-- **Static Assets**: Automated PDF generation script (`scripts/build-pdfs.js`) ensuring authentic LoR and Resume static assets are compiled into `public/` and `dist/`.
+- **Static Assets**: Authentic, byte-for-byte original LoR and Resume PDF documents served directly from `/public/` and bundled into `dist/`.
 - **Code Quality**: TypeScript strict type-checking (`tsc --noEmit`), automated linting.
 
 ---
@@ -105,11 +105,9 @@ Includes the verified executive endorsement from **Mayank Hinger**, Vice Preside
 ```
 ├── public/
 │   ├── Aryan_Sehgal_Resume.pdf        # Authentic 3-page verified resume PDF
-│   ├── Mayank_Hinger_Sprinklr_LoR.pdf  # Authentic 2-page DocuSign verified LoR PDF
+│   ├── Sprinklr_LoR.pdf               # Authentic 2-page DocuSign verified LoR PDF
 │   ├── aryan-photo.jpg                # Portrait photograph
 │   └── favicon.png                    # Portfolio icon
-├── scripts/
-│   └── build-pdfs.js                  # Automated build script for static PDF assets
 ├── src/
 │   ├── components/
 │   │   ├── CaseStudies.tsx            # 11 ML case studies gallery with search & filters
@@ -181,7 +179,7 @@ Includes the verified executive endorsement from **Mayank Hinger**, Vice Preside
    ```bash
    npm run build
    ```
-   This compiles the static assets, executes `scripts/build-pdfs.js` to ensure the authentic resume and LoR PDFs are bundled in `dist/`, and runs Vite production minification.
+   This bundles the application, automatically copies all static assets from `/public/` (including the exact, unmodified Resume and LoR PDF files) into `dist/`, and runs Vite production minification.
 
 3. **Preview Production Build**:
    ```bash
