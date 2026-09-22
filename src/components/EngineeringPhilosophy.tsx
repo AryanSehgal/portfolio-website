@@ -41,13 +41,13 @@ export const EngineeringPhilosophy: React.FC = () => {
                 transition={{ duration: 0.35, delay: idx * 0.1 }}
                 className="h-full"
               >
-                <Card className="h-full bg-white dark:bg-stone-900 border-stone-200 dark:border-stone-800 shadow-sm hover:border-amber-500/40 transition-colors flex flex-col justify-between">
+                <Card className="h-full rounded-2xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 shadow-xs hover:border-amber-500/40 dark:hover:border-amber-500/40 transition-all flex flex-col justify-between">
                   <CardHeader className="pb-4">
                     <div className="flex items-center justify-between mb-3">
-                      <div className="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-700 dark:text-amber-400">
+                      <div className="w-10 h-10 rounded-lg bg-amber-500/10 dark:bg-amber-400/10 border border-amber-500/20 dark:border-amber-400/20 flex items-center justify-center text-amber-700 dark:text-amber-400">
                         <Icon className="w-5 h-5" />
                       </div>
-                      <span className="font-mono text-xs font-bold text-stone-600 dark:text-stone-400 bg-stone-100 dark:bg-stone-800 px-2 py-0.5 rounded">
+                      <span className="font-mono text-xs font-bold text-stone-600 dark:text-stone-300 bg-stone-100 dark:bg-stone-800 border border-stone-200/60 dark:border-stone-700/60 px-2.5 py-0.5 rounded-md">
                         PHASE {pillar.step}
                       </span>
                     </div>
@@ -59,13 +59,13 @@ export const EngineeringPhilosophy: React.FC = () => {
                     <p className="text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
                       {pillar.description}
                     </p>
-                    <div className="pt-3 border-t border-stone-100 dark:border-stone-800/80">
-                      <p className="text-xs font-semibold text-stone-700 dark:text-stone-300 mb-2 uppercase tracking-wider font-mono">
+                    <div className="pt-4 border-t border-stone-100 dark:border-stone-800">
+                      <p className="text-xs font-semibold text-stone-700 dark:text-stone-300 mb-2.5 uppercase tracking-wider font-mono">
                         Key Engineering Practices:
                       </p>
-                      <ul className="space-y-2">
+                      <ul className="space-y-2.5">
                         {pillar.concretePractices.map((practice, pIdx) => (
-                          <li key={pIdx} className="text-xs text-stone-600 dark:text-stone-300 flex items-start gap-2 leading-normal">
+                          <li key={pIdx} className="text-xs text-stone-600 dark:text-stone-300 flex items-start gap-2 leading-relaxed">
                             <CheckCircle2 className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
                             <span>{practice}</span>
                           </li>

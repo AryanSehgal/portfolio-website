@@ -10,7 +10,7 @@
     />
     <meta name="keywords" content="Aryan Sehgal, AI Engineer, Machine Learning Engineer, Frontend Systems, Sprinklr, Forma UI, PyTorch, ONNX, WebGPU, React 19, TypeScript" />
     <meta name="author" content="Aryan Sehgal" />
-    <link rel="canonical" href="https://github.com/AryanSehgal" />
+    <link rel="canonical" href="https://www.aryansehgal.online/" />
 
     <!-- Favicon: Aryan's Photograph -->
     <link rel="icon" type="image/jpeg" href="/aryan-photo.jpg" />
@@ -19,7 +19,7 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="profile" />
-    <meta property="og:url" content="https://github.com/AryanSehgal" />
+    <meta property="og:url" content="https://www.aryansehgal.online/" />
     <meta property="og:title" content="Aryan Sehgal | Applied AI & Full-Stack Systems Engineer" />
     <meta
       property="og:description"
@@ -76,6 +76,22 @@
       "email": "mailto:aryansehgal@aol.in",
       "description": "Software engineer with 2+ years building enterprise creative platforms at Sprinklr in a 2-person team, specializing in implementing and integrating SOTA AI models into production-ready web products and author of @aryan_sehgal/forma-ui."
     }
+    </script>
+    <!-- Prevent Flash of Unstyled Theme & Sync Forma UI Tokens -->
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('theme');
+          var isDark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.setAttribute('data-f-theme', 'dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.setAttribute('data-f-theme', 'light');
+          }
+        } catch (e) {}
+      })();
     </script>
   </head>
   <body class="bg-stone-50 text-stone-900 dark:bg-stone-950 dark:text-stone-100 antialiased selection:bg-amber-500/20 selection:text-amber-800 dark:selection:bg-amber-400/20 dark:selection:text-amber-200 transition-colors duration-200">

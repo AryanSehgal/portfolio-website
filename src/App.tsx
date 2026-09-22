@@ -29,9 +29,11 @@ export default function App() {
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add('dark');
+      document.documentElement.setAttribute('data-f-theme', 'dark');
       localStorage.setItem('theme', 'dark');
     } else {
       document.documentElement.classList.remove('dark');
+      document.documentElement.setAttribute('data-f-theme', 'light');
       localStorage.setItem('theme', 'light');
     }
   }, [darkMode]);

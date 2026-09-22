@@ -23,6 +23,46 @@
   }
 }
 
+/* Forma UI Design System Token Synchronization */
+:root,
+[data-f-theme='light'] {
+  --f-bg: #ffffff;
+  --f-surface: #f5f5f4;
+  --f-fg: #1c1917;
+  --f-muted: #78716c;
+  --f-border: #e7e5e4;
+  --f-font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.dark,
+[data-f-theme='dark'] {
+  --f-bg: #1c1917;
+  --f-surface: #292524;
+  --f-fg: #f5f5f4;
+  --f-muted: #a8a29e;
+  --f-border: #292524;
+  --f-font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Forma UI f-card theme synchronization */
+.dark .f-card,
+[data-f-theme='dark'] .f-card {
+  background: #1c1917 !important;
+  background-color: #1c1917 !important;
+  border-color: #292524 !important;
+  color: #f5f5f4 !important;
+}
+
+.dark .f-card-title,
+[data-f-theme='dark'] .f-card-title {
+  color: #f5f5f4 !important;
+}
+
+.dark .f-card-description,
+[data-f-theme='dark'] .f-card-description {
+  color: #d6d3d1 !important;
+}
+
 /* Custom scrollbar styling */
 ::-webkit-scrollbar {
   width: 8px;
