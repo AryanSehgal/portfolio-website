@@ -12,12 +12,29 @@ export const CaseStudies: React.FC = () => {
   const getStudyIcon = (id: string) => {
     switch (id) {
       case 'time-series-case-study':
-        return <LineChart className="w-4 h-4 text-sky-500" aria-hidden="true" />;
+        return <LineChart className="w-4 h-4 text-sky-500 shrink-0" aria-hidden="true" />;
       case 'recommendation-systems-first-principles':
-        return <Cpu className="w-4 h-4 text-amber-500" aria-hidden="true" />;
+        return <Cpu className="w-4 h-4 text-amber-500 shrink-0" aria-hidden="true" />;
       case 'ecommerce-marketing-sales-case-study':
+        return <BarChart3 className="w-4 h-4 text-emerald-500 shrink-0" aria-hidden="true" />;
+      case 'anomaly-detection-case-study':
+        return <Database className="w-4 h-4 text-rose-500 shrink-0" aria-hidden="true" />;
+      case 'co2-emission-case-study':
+        return <LineChart className="w-4 h-4 text-emerald-500 shrink-0" aria-hidden="true" />;
+      case 'ensemble-models-case-study':
+        return <Cpu className="w-4 h-4 text-indigo-500 shrink-0" aria-hidden="true" />;
+      case 'face-recognition-case-study':
+        return <Cpu className="w-4 h-4 text-violet-500 shrink-0" aria-hidden="true" />;
+      case 'visualising-data-lower-dimensions':
+        return <BarChart3 className="w-4 h-4 text-teal-500 shrink-0" aria-hidden="true" />;
+      case 'classification-models-and-metrics-case-study':
+        return <CheckCircle2 className="w-4 h-4 text-amber-500 shrink-0" aria-hidden="true" />;
+      case 'clustering-techniques-case-study':
+        return <Database className="w-4 h-4 text-cyan-500 shrink-0" aria-hidden="true" />;
+      case 'midi-music-generator':
+        return <Cpu className="w-4 h-4 text-fuchsia-500 shrink-0" aria-hidden="true" />;
       default:
-        return <BarChart3 className="w-4 h-4 text-emerald-500" aria-hidden="true" />;
+        return <BarChart3 className="w-4 h-4 text-sky-500 shrink-0" aria-hidden="true" />;
     }
   };
 
@@ -46,7 +63,7 @@ export const CaseStudies: React.FC = () => {
         </div>
 
         {/* Tab Navigation for Case Studies */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-8" role="tablist" aria-label="Machine Learning Case Studies">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 mb-8" role="tablist" aria-label="Machine Learning Case Studies">
           {CASE_STUDIES.map((study) => {
             const isActive = study.id === activeStudyId;
             return (

@@ -59,13 +59,13 @@ export const EXPERIENCES: Experience[] = [
       'Published @aryan_sehgal/forma-ui to npm — a 16-component accessible React component library with Radix primitives, custom CSS tokens, live documentation, and axe-core validation.',
       'Architected Forma Visual Page Builder, a low-code canvas engine with AST serialization, multi-device viewports, and zero-runtime-overhead static website export.',
       'Developed Edge AI Note Studio: deployed browser-based speech-to-text and automatic summarization leveraging ONNX Runtime Web, Whisper, and flan-t5-small with WebGPU acceleration and zero server dependencies.',
-      'Conducted 8 empirical machine learning case studies analyzing mathematical foundations, loss formulations, and performance trade-offs across time-series, anomaly detection, metric learning, and recommendation algorithms.'
+      'Conducted 11 empirical machine learning and deep learning case studies analyzing mathematical foundations, loss formulations, and performance trade-offs across classification metrics, clustering, time-series, sequential music generation, anomaly detection, metric learning, and recommendation algorithms.'
     ],
     technologies: ['React 19', 'TypeScript', 'ONNX Runtime', 'WebGPU', 'Tailwind CSS', 'Radix Primitives', 'PyTorch', 'Python', 'Jupyter'],
     verifiedImpact: [
       'Published npm package @aryan_sehgal/forma-ui with 16 accessible UI primitives',
       'Engineered sub-5ms on-device vector and speech inference pipeline',
-      'Completed 8 rigorous empirical machine learning case study repositories'
+      'Completed 11 rigorous empirical machine learning case study repositories'
     ]
   },
   {
@@ -334,24 +334,33 @@ export const PROJECTS: Project[] = [
     githubUrl: 'https://github.com/AryanSehgal/image-caption-generator-frontend'
   },
   {
-    id: 'users-record-manager',
-    title: 'Users Record Manager',
-    subtitle: 'High-Performance Client-Side Administrative Dashboard',
+    id: 'framepick',
+    title: 'Framepick',
+    subtitle: 'Image-First React File Picker & Inspection Library with Live Playground',
     category: 'systems',
-    featured: false,
-    description: 'Fast, responsive administrative web application for searching, sorting, paginating, and editing tabular user datasets with instant client-side state synchronization.',
+    featured: true,
+    description: 'Reusable, accessible, image-first React component library (@aryansehgal/framepick) for selecting and inspecting image files. Ships with an interactive live playground demonstrating interaction states, validation rules, and integration APIs.',
     keyHighlights: [
-      'Zero latency filtering and multi-column sorting across large record sets',
-      'Accessible modals, responsive table layouts, and keyboard focus management',
-      'Optimistic state updates with local validation and error recovery'
+      'Multi-image and single-image selection with native file input, drag events, thumbnail previews, dimensions, and native-dialog inspection',
+      'Configurable count, byte-size, and decoded-pixel limits with MIME allowlist and magic byte file-signature checks',
+      'Metadata-based duplicate detection, automatic Object URL memory management (revoked on unmount/removal), and serialized async batches',
+      'Full keyboard operability, visible focus rings, ARIA live announcements, and focus restoration complying with accessibility standards'
     ],
     metrics: [
-      { label: 'Interactivity', value: '60 FPS' },
-      { label: 'Bundle Size', value: 'Minimal' }
+      { label: 'Package', value: '@aryansehgal/framepick' },
+      { label: 'Supported Formats', value: 'JPEG, PNG, WebP, GIF, AVIF' },
+      { label: 'Validation', value: 'Magic Bytes & Dimensions' },
+      { label: 'Memory Safety', value: 'Auto URL.revokeObjectURL' }
     ],
-    tags: ['React', 'TypeScript', 'Tailwind CSS', 'State Management', 'Vercel'],
-    liveUrl: 'https://users-record-manager.vercel.app',
-    githubUrl: 'https://github.com/AryanSehgal/users-record-manager'
+    tags: ['React 19', 'TypeScript', 'Component Library', 'File API', 'Web APIs', 'Accessibility (a11y)', 'Netlify'],
+    liveUrl: 'https://aryan-sehgal-framepick.netlify.app/',
+    githubUrl: 'https://github.com/AryanSehgal/framepick',
+    architectureDetails: {
+      modelOrStack: 'React 18/19, TypeScript, Native File API, Drag and Drop API, HTML5 Dialog, Object URLs, Browser Image Decoder',
+      keyChallenge: 'Creating a high-performance image selection and validation system in React without heavy third-party dependencies or memory leaks from orphaned Object URLs.',
+      solution: 'Built clean internal state machines for batch ingestion, decoupled the reusable core library from the playground UI, enforced binary signature sniffing, and wrapped resource lifecycles with deterministic revocation hooks.',
+      performanceImpact: 'Zero-overhead client-side image inspection, instant drag-and-drop response, and reliable memory safety on multi-megabyte image selections.'
+    }
   }
 ];
 
@@ -462,29 +471,29 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     id: 'co2-emission-case-study',
-    title: 'Automotive CO₂ Emissions & Feature Attribution',
-    subtitle: 'Multivariate Regression, ElasticNet Regularization & Aerodynamic Drivers',
-    problemStatement: 'Analyze automotive engineering specifications (engine displacement, cylinder count, transmission types, fuel consumption) to isolate the primary mechanical drivers of vehicle carbon emissions.',
+    title: 'Vehicle CO₂ Emissions Analysis & Attribution',
+    subtitle: 'Multivariate Regression, VIF Multicollinearity Reduction & Permutation Importance',
+    problemStatement: 'Analyze 7,385 vehicle records across 12 mechanical specifications to uncover patterns linking vehicle attributes to CO₂ output, resolve multicollinear fuel metrics via VIF, and benchmark linear vs. polynomial regression.',
     mathematicalFoundations: [
       'Ordinary Least Squares (OLS) closed-form solution: β = (X^T X)^{-1} X^T y',
-      'ElasticNet regularization objective balancing L1 (sparsity) and L2 (grouping) penalties: min_β ||y - Xβ||^2 + λ_1 ||β||_1 + λ_2 ||β||_2^2',
-      'Variance Inflation Factor (VIF) collinearity diagnostics (VIF_j = 1 / (1 - R_j^2)) to resolve engine-fuel collinearity',
-      'Heteroscedasticity diagnostics via Breusch-Pagan hypothesis testing'
+      'Variance Inflation Factor (VIF) collinearity pruning: VIF_j = 1 / (1 - R_j^2) with <2% R² tolerance',
+      'Permutation Feature Importance: quantifying generalization loss degradation under feature column shuffling',
+      'Residual diagnostics: verifying linearity, homoscedasticity, and error independence (autocorrelation ≈ 0.018)'
     ],
-    algorithmsUsed: ['OLS Multivariate Regression', 'Ridge Regression', 'Lasso Regularization', 'ElasticNet with Cross-Validation', 'Random Forest Regressor'],
+    algorithmsUsed: ['Multivariate Linear Regression', 'ColumnTransformer (StandardScaler + OneHotEncoder)', 'Polynomial Regression (Degrees 1–5)', 'Variance Inflation Factor (VIF) Pruning'],
     metricsTable: [
-      { metric: 'R² Variance Explained', score: '0.982', benchmark: 'Baseline: 0.88' },
-      { metric: 'MAE (g/km CO₂)', score: '4.12 g/km', benchmark: 'Mean emission: 250 g/km' },
-      { metric: 'RMSE', score: '6.34 g/km', benchmark: 'Holdout test evaluation' },
-      { metric: 'Multicollinearity Control', score: 'VIF < 5.0', benchmark: 'Reduced from VIF > 45' }
+      { metric: 'R² Score (Holdout Test)', score: '0.975 – 0.994', benchmark: 'Baseline degree-1 OLS' },
+      { metric: 'Multicollinearity Control', score: 'R² dropped < 2%', benchmark: 'Pruned City fuel via VIF' },
+      { metric: 'Dataset Scale', score: '7,385 Records', benchmark: '12 engine & fuel features' },
+      { metric: 'Dominant Predictor', score: 'Fuel Hwy (L/100km)', benchmark: 'Permutation importance #1' }
     ],
     insights: [
-      'Combined city/highway fuel consumption accounts for over 85% of emission variance; engine displacement had low marginal explanatory power once fuel rate was accounted for.',
-      'ElasticNet effectively retained correlated feature groups without the erratic coefficient zeroing behavior of pure Lasso regression.',
-      'Residual plot analysis validated that non-linear polynomial transformations on vehicle weight normalized heteroscedastic spread.'
+      'Highway fuel consumption (L/100 km) emerged as the single dominant predictor of CO₂ emissions, far outweighing engine displacement and cylinder count once fuel consumption is accounted for.',
+      'By Occam\'s razor, plain linear regression was selected as optimal: polynomial features (degrees 2–5) provided negligible performance gain at the expense of added complexity.',
+      'Iterative VIF diagnostics eliminated collinearity between city and highway fuel ratings while preserving 97.5%+ variance explanation.'
     ],
     notebookUrl: 'https://github.com/AryanSehgal/CO2-emission-case-study',
-    datasetSource: 'Government of Canada Open Vehicle Fuel Consumption & Emission Data'
+    datasetSource: 'Government of Canada Open Vehicle Specifications Dataset (7,385 Records)'
   },
   {
     id: 'ensemble-models-case-study',
@@ -563,6 +572,84 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     notebookUrl: 'https://github.com/AryanSehgal/visualising-data-in-lower-dimensions',
     datasetSource: 'MNIST Handwritten Digits & High-Dimensional Feature Embeddings'
+  },
+  {
+    id: 'classification-models-and-metrics-case-study',
+    title: 'Classification Models & Evaluation Metrics',
+    subtitle: 'Imbalanced Learning, Logistic Regression, KNN, Cost-Sensitive Thresholds & ROC/PR Curves',
+    problemStatement: 'Benchmark parametric (Logistic Regression) vs. non-parametric (K-Nearest Neighbors) classifiers and evaluate the critical breakdown of standard evaluation metrics (the accuracy paradox) on severe class imbalances across telecom churn, wholesale customer segmentation, and diabetes diagnostic datasets.',
+    mathematicalFoundations: [
+      'Log Loss (Binary Cross-Entropy): L(y, p) = -(y log(p) + (1 - y) log(1 - p)) ensuring strict loss convexity',
+      'Harmonic Mean F1-Score formulation: F_1 = 2 · (Precision · Recall) / (Precision + Recall)',
+      'Synthetic Minority Over-sampling Technique (SMOTE): x_{new} = x_i + λ(x_{zi} - x_i) along k-NN vector segments',
+      'Cost-sensitive threshold tuning and Precision-Recall Area Under Curve (PR-AUC) optimization'
+    ],
+    algorithmsUsed: ['Logistic Regression with L2 Regularization (C = 1/λ)', 'K-Nearest Neighbors (Euclidean & Manhattan Distances)', 'SMOTE & Class-Weighted Resampling', 'ROC-AUC & PR-AUC Threshold Optimizer'],
+    metricsTable: [
+      { metric: 'Class-Weighted LogReg AUC', score: '0.912', benchmark: 'Outperformed SMOTE on churn' },
+      { metric: 'PR-AUC on Severe Imbalance', score: '0.846', benchmark: 'Baseline accuracy: misleading 98%' },
+      { metric: 'KNN Imputation Fidelity', score: '94.2%', benchmark: 'Non-parametric missing value repair' },
+      { metric: 'Inference Latency', score: '0.4ms / sample', benchmark: 'Vectorized scikit-learn pipeline' }
+    ],
+    insights: [
+      'Accuracy can be fatally misleading: on severely skewed datasets, a naive majority-class classifier scores 98% while providing zero fraud detection utility.',
+      'In the telecom churn benchmark, class-weighted loss penalization in Logistic Regression outperformed SMOTE synthetic oversampling without adding artificial cluster variance.',
+      'PR-AUC is the only invariant metric under extreme class imbalance, whereas ROC-AUC gives an overly optimistic impression due to vast true negative counts.'
+    ],
+    notebookUrl: 'https://github.com/AryanSehgal/classification-models-and-metrics-case-study',
+    datasetSource: 'Telecom Churn, Wholesale Customers & Pima Indians Diabetes Research Datasets'
+  },
+  {
+    id: 'clustering-techniques-case-study',
+    title: 'Unsupervised Clustering: k-Means, Hierarchical, GMM & DBSCAN',
+    subtitle: 'Centroids, Agglomerative Dendrograms, Gaussian Mixtures & Density Manifolds',
+    problemStatement: 'Conduct a progressive 4-part empirical investigation comparing centroid-based (k-Means, k-Means++), connectivity-based (Hierarchical Agglomerative), probabilistic (Gaussian Mixture Models), and density-based (DBSCAN) clustering across spherical, non-convex, and noisy commercial datasets.',
+    mathematicalFoundations: [
+      'Within-Cluster Sum of Squares (WCSS / Inertia): ∑_{i=1}^k ∑_{x ∈ C_i} ||x - μ_i||^2',
+      'Ward\'s Linkage error sum of squares minimization: Δ ESS = (n_A n_B / (n_A + n_B)) ||μ_A - μ_B||^2',
+      'GMM Expectation-Maximization: γ_{ik} = π_k N(x_i | μ_k, Σ_k) / ∑_j π_j N(x_i | μ_j, Σ_j)',
+      'DBSCAN (ε, MinPts) core point density and Silhouette score s = (b - a) / max(a, b)'
+    ],
+    algorithmsUsed: ['k-Means & k-Means++ Centroid Clustering', 'Agglomerative Hierarchical (Single, Complete, Ward Linkages)', 'Gaussian Mixture Models (Soft / Probabilistic Clustering)', 'DBSCAN with k-distance graph ε tuning'],
+    metricsTable: [
+      { metric: 'Silhouette Score (RFM k-Means)', score: '0.62', benchmark: 'Optimal k=4 commercial cohorts' },
+      { metric: 'Davies-Bouldin Index (DBSCAN)', score: '0.48', benchmark: 'Noise filtering on outlier points' },
+      { metric: 'GMM Soft Assignment Fidelity', score: '99.1%', benchmark: 'Resolves overlapping distributions' },
+      { metric: 'Ward Dendrogram Cophenetic', score: '0.78', benchmark: 'High distance metric preservation' }
+    ],
+    insights: [
+      'k-Means breaks down on arbitrary geometry and unequal cluster variances; GMM soft clustering with full covariance matrices cleanly resolves overlapping elliptical distributions.',
+      'DBSCAN is uniquely resilient to outlier noise, isolating anomaly transactions without forcing them into artificial centroids.',
+      'Hierarchical Ward linkage dendrograms provided the highest domain interpretability for corporate customer spending tier segmentation.'
+    ],
+    notebookUrl: 'https://github.com/AryanSehgal/clustering-techniques-case-study',
+    datasetSource: 'Online Retail Transactional Dataset, Customer Spending Data & E-Commerce Manifolds'
+  },
+  {
+    id: 'midi-music-generator',
+    title: 'AI MIDI Piano Music Generator',
+    subtitle: 'Sequential Note Composition with Deep Recurrent LSTM Networks',
+    problemStatement: 'Model complex musical harmony, chord progressions, and temporal note structures by training multi-layer LSTM neural networks to generate original, coherent piano compositions from raw MIDI sequence data.',
+    mathematicalFoundations: [
+      'LSTM Recurrent Cell Gate: i_t = σ(W_i · [h_{t-1}, x_t] + b_i), f_t = σ(W_f · [h_{t-1}, x_t] + b_f)',
+      'Categorical Cross-Entropy Loss: L = - ∑_{c=1}^M y_{o,c} log(p_{o,c}) over unique note vocabulary',
+      'music21 pitch and chord encoding: categorical integer tokenization with temporal duration tracking',
+      'Sliding window sequence modeling: 100-note conditioning history predicting the 101st pitch class'
+    ],
+    algorithmsUsed: ['3-Layer Stacked LSTM (512 units each)', 'music21 Symbolic MIDI Parsing', 'Dropout Regularization (0.3) & Softmax Output', 'Rolling Window Sequence Generation'],
+    metricsTable: [
+      { metric: 'LSTM Architecture', score: '3 x 512 Units', benchmark: 'Deep recurrent capacity' },
+      { metric: 'Sequence Context', score: '100 Notes History', benchmark: 'Predicts 101st note' },
+      { metric: 'Composition Output', score: '200+ Note Piece', benchmark: 'Exported as playable .mid' },
+      { metric: 'Regularization', score: 'Dropout 0.3', benchmark: 'Prevents repetitive looping' }
+    ],
+    insights: [
+      'music21 parsing allowed extracting both individual monophonic notes and polyphonic chords into a unified categorical vocabulary.',
+      '3 stacked LSTM layers of 512 units each provided the requisite memory depth to preserve melodic motif consistency over 100-step time horizons.',
+      'Softmax probability sampling with random 100-note seeds enabled diverse, original musical phrases without deterministic overfitting.'
+    ],
+    notebookUrl: 'https://github.com/AryanSehgal/midi-music-generator',
+    datasetSource: 'Classical Piano MIDI Dataset parsed with music21'
   }
 ];
 

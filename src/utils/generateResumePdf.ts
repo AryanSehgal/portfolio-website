@@ -121,7 +121,7 @@ export function downloadResumePdf(): void {
     'Published @aryan_sehgal/forma-ui on npm: authored 16 accessible React primitives, automated axe-core accessibility testing suite, and zero-runtime CSS token architecture.',
     'Engineered Forma Visual Page Builder: low-code canvas with AST-driven code generation, exportable to clean HTML, React, and Tailwind CSS.',
     'Built Edge AI Note Studio: implemented client-side transformer model inference via ONNX Runtime Web and WebGPU (Whisper, Flan-T5, quantized semantic embeddings).',
-    'Authored 8 empirical machine learning case studies analyzing SVD matrix factorization, hybrid recommendation algorithms, and ARIMA time-series forecasting.',
+    'Authored 11 empirical machine learning and deep learning case studies analyzing classification metrics, clustering manifolds, SVD, SARIMAX, and recurrent LSTM networks.',
   ];
 
   role1Bullets.forEach((bullet) => {
@@ -243,6 +243,10 @@ export function downloadResumePdf(): void {
       desc: 'Published accessible React component library featuring 16 component primitives, Radix UI foundations, custom CSS tokens (--f-*), Theme Studio, and automated axe-core accessibility validation suite.',
     },
     {
+      title: 'Framepick (@aryansehgal/framepick on GitHub & Netlify)',
+      desc: 'Accessible, image-first React file picker and inspection component library with interactive playground. Features magic byte signature validation, dimension limits, duplicate detection, and zero-leak Object URL lifecycle memory cleanup.',
+    },
+    {
       title: 'Edge AI Note Studio (Client-Side WebGPU & ONNX Runtime Web)',
       desc: 'In-browser privacy-first voice recorder and note studio leveraging ONNX Runtime Web and WebGPU. Executes local Whisper ASR and Flan-T5 text summarization with sub-5ms latency and zero server-side telemetry.',
     },
@@ -251,8 +255,8 @@ export function downloadResumePdf(): void {
       desc: 'Interactive canvas engine with real-time DOM tree manipulation, responsive multi-breakpoint visual editor, and instant clean static site ZIP export with zero runtime styling overhead.',
     },
     {
-      title: 'Empirical Machine Learning Research Case Studies (8 Repositories)',
-      desc: 'Conducted 8 empirical research case studies implementing mathematical formulations from literature: SVD collaborative filtering, SARIMAX time-series, Siamese metric learning, and high-dimensional PCA/t-SNE manifold projections.',
+      title: 'Empirical Machine Learning Research Case Studies (11 Repositories)',
+      desc: 'Conducted 11 empirical research case studies implementing mathematical formulations from literature: clustering manifolds, classification metrics, SVD collaborative filtering, SARIMAX time-series, deep LSTM music composition, and high-dimensional PCA/t-SNE projections.',
     },
   ];
 

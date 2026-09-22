@@ -60,7 +60,7 @@ WORK EXPERIENCE:
    - Published @aryan_sehgal/forma-ui on npm — 16 accessible React primitives with Radix UI and custom CSS tokens.
    - Architected Forma Visual Page Builder (AST canvas engine, multi-device viewports, zero-runtime export).
    - Built Edge AI Note Studio (client-side Whisper ASR and Flan-T5 summarization via ONNX Runtime Web & WebGPU).
-   - Authored 8 empirical machine learning case studies analyzing SVD, SARIMAX, metric learning, and dimensionality reduction.
+   - Authored 11 empirical machine learning and deep learning case studies analyzing classification metrics, clustering, SVD, SARIMAX, and recurrent LSTM networks.
 
 2. Sprinklr - Senior Product Engineer (July 2023 - September 2025)
    - 2-person core engineering team that built Sprinklr Ads Creative Management platform from scratch.
@@ -81,8 +81,9 @@ WORK EXPERIENCE:
 FEATURED PROJECTS:
 - Forma UI Design System & Component Library (@aryan_sehgal/forma-ui on npm)
 - Edge AI Note Studio (Client-Side WebGPU & ONNX Runtime Web)
+- Framepick (Image-First React File Picker & Inspection Library with Live Playground)
 - Forma Visual Page Builder (AST Canvas Engine)
-- Empirical Machine Learning Research Case Studies (8 Repositories)
+- Empirical Machine Learning Research Case Studies (11 Repositories)
 
 ACHIEVEMENTS:
 - All India Rank 1912 in JEE Mains (Top 0.15% nationally out of 1.2M applicants)
@@ -240,7 +241,7 @@ ACHIEVEMENTS:
                   <li>Published @aryan_sehgal/forma-ui to npm — 16 accessible React components with Radix primitives, custom CSS tokens, Theme Studio, and automated axe-core validation.</li>
                   <li>Architected Forma Visual Page Builder: a low-code canvas engine with multi-breakpoint viewports and zero-runtime static site ZIP export.</li>
                   <li>Built Edge AI Note Studio with browser-based Whisper speech recognition and Flan-T5 text summarization via ONNX Runtime Web and WebGPU.</li>
-                  <li>Authored 8 empirical machine learning case study repositories analyzing mathematical formulations across time-series, metric learning, and recommendations.</li>
+                  <li>Authored 11 empirical machine learning and deep learning case study repositories analyzing mathematical formulations across classification metrics, clustering, time-series, music generation, and recommendation algorithms.</li>
                 </ul>
               </div>
 
@@ -326,6 +327,18 @@ ACHIEVEMENTS:
                 <div className="space-y-1">
                   <div className="flex justify-between items-baseline">
                     <span className="text-sm font-bold text-stone-900 dark:text-stone-100">
+                      Framepick
+                    </span>
+                    <span className="text-xs font-mono text-amber-700 dark:text-amber-400 font-semibold">@aryansehgal/framepick (Netlify & GitHub)</span>
+                  </div>
+                  <p className="text-xs text-stone-600 dark:text-stone-300">
+                    Accessible, image-first React file picker and inspection component library with interactive live playground. Features magic byte signature validation, dimension decoding limits, duplicate detection, and automated Object URL lifecycle memory safety.
+                  </p>
+                </div>
+
+                <div className="space-y-1">
+                  <div className="flex justify-between items-baseline">
+                    <span className="text-sm font-bold text-stone-900 dark:text-stone-100">
                       Forma Visual Page Builder
                     </span>
                     <span className="text-xs font-mono text-stone-500">AST Canvas Engine</span>
@@ -340,10 +353,10 @@ ACHIEVEMENTS:
                     <span className="text-sm font-bold text-stone-900 dark:text-stone-100">
                       Empirical Machine Learning Research Case Studies
                     </span>
-                    <span className="text-xs font-mono text-stone-500">8 Empirical Repositories</span>
+                    <span className="text-xs font-mono text-stone-500">11 Empirical Repositories</span>
                   </div>
                   <p className="text-xs text-stone-600 dark:text-stone-300">
-                    Conducted 8 empirical research case studies implementing mathematical formulations from literature: SVD collaborative filtering, SARIMAX time-series, Siamese metric learning, and high-dimensional PCA/t-SNE manifold projections.
+                    Conducted 11 empirical research case studies implementing mathematical formulations from literature: clustering manifolds, classification metrics, SVD collaborative filtering, SARIMAX time-series, deep LSTM music composition, and high-dimensional PCA/t-SNE projections.
                   </p>
                 </div>
               </div>
