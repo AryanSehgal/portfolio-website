@@ -285,7 +285,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenRecommendation, onOpenResume }
 
                 <div className="p-3 rounded-xl bg-stone-50 dark:bg-stone-800/50 border border-stone-100 dark:border-stone-800">
                   <div className="text-xl font-extrabold text-stone-900 dark:text-stone-100 font-mono leading-tight">
-                    Class XII: 90% | Class X: 10 CGPA
+                    Class X: 10 CGPA
                   </div>
                   <div className="text-[11px] text-stone-500 dark:text-stone-400 leading-tight mt-1">
                     Central Board of Secondary Education (CBSE)
