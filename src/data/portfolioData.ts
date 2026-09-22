@@ -92,7 +92,7 @@ export const EXPERIENCES: Experience[] = [
     docsLinks: [
       {
         title: 'Sprinklr Ads Creative Management Documentation',
-        url: 'https://www.sprinklr.com/help/articles/creative-management/ads-creative-management-overview/'
+        url: 'https://www.sprinklr.com/help/articles/overview/what-is-the-ads-creative-management-app/65435e12b1f59867f3be1c96'
       }
     ]
   },
@@ -275,7 +275,7 @@ export const PROJECTS: Project[] = [
       { label: 'Team Size', value: '2 Core Engineers' }
     ],
     tags: ['React', 'TypeScript', 'Next.js', 'GraphQL', 'Apollo Cache', 'AI Agents', 'WCAG AAA', 'Jest'],
-    docsUrl: 'https://www.sprinklr.com/help/articles/creative-management/ads-creative-management-overview/',
+    docsUrl: 'https://www.sprinklr.com/help/articles/overview/what-is-the-ads-creative-management-app/65435e12b1f59867f3be1c96',
     architectureDetails: {
       modelOrStack: 'React 18, Next.js SSR, Apollo GraphQL, Sprinklr Hyperspace Design System, Jest/RTL',
       keyChallenge: 'Managing multi-gigabyte media asset catalogs with diverse cross-platform aspect ratios, multi-tenant brand rules, and high concurrent user demands.',
