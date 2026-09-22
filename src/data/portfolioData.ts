@@ -29,7 +29,7 @@ export const RECOMMENDATION_DATA: Recommendation = {
     'Aryan distinguished himself through his ability to take ownership of complex and relatively open-ended problems and turn them into practical, well-structured product solutions.',
     'Aryan was one of the two core members working on this initiative and was responsible for building a substantial portion of the product from the ground up.',
     'The product also incorporated AI and machine-learning-based capabilities for creative evaluation, including AI-assisted generation of brand guidelines and creative scoring based on brand compliance and advertising performance.',
-    'One of Aryan’s strongest qualities is his willingness to learn and go beyond the immediate requirements... Aryan possesses a strong combination of intellectual curiosity, analytical ability, technical aptitude, initiative, adaptability, and integrity.'
+    'In my assessment, Aryan possesses a strong combination of intellectual curiosity, analytical ability, technical aptitude, initiative, adaptability, and integrity.'
   ],
   fullLetterParagraphs: [
     'To Whom It May Concern,',
@@ -42,7 +42,8 @@ export const RECOMMENDATION_DATA: Recommendation = {
     'Aryan also demonstrated a strong sense of accountability. Given the size of the team, there was little room for narrowly defined responsibilities or dependence on extensive supervision. He was able to work independently, make progress in ambiguous situations, identify problems proactively, and take responsibility for delivering outcomes. I found this level of ownership particularly impressive for someone at his stage of professional development.',
     'Beyond his technical contributions, Aryan was a thoughtful and dependable colleague. He communicated effectively, was receptive to feedback, and worked constructively through challenging situations. Over the course of our association, I observed him become increasingly confident and independent in his approach to problem-solving and decision-making.',
     'In my assessment, Aryan possesses a strong combination of intellectual curiosity, analytical ability, technical aptitude, initiative, adaptability, and integrity. His experience building a product in a highly lean environment has given him valuable exposure to both the technical and practical dimensions of solving complex problems.',
-    'I believe that whether in advanced engineering roles or further graduate programs, Aryan will approach every endeavor with the same curiosity, discipline, and relentless sense of ownership that he demonstrated during his time at Sprinklr. I recommend him with full confidence.'
+    'I believe that pursuing a master’s degree will provide Aryan with an opportunity to further develop his technical knowledge and analytical capabilities. Given his demonstrated ability to learn quickly, work independently, and take on challenging problems, I am confident that he will approach his academic pursuits with the same curiosity, discipline, and sense of ownership that he demonstrated during his time at Sprinklr.',
+    'I am pleased to recommend Aryan Sehgal for further academic study and wish him every success in his future academic and professional endeavors. Should any further information be required regarding his qualifications or professional experience, I would be pleased to provide it.'
   ]
 };
 
@@ -92,7 +93,7 @@ export const EXPERIENCES: Experience[] = [
     docsLinks: [
       {
         title: 'Sprinklr Ads Creative Management Documentation',
-        url: 'https://www.sprinklr.com/help/articles/overview/what-is-the-ads-creative-management-app/65435e12b1f59867f3be1c96'
+        url: 'https://www.sprinklr.com/help/articles/creative-management/ads-creative-management-overview/'
       }
     ]
   },
@@ -275,7 +276,7 @@ export const PROJECTS: Project[] = [
       { label: 'Team Size', value: '2 Core Engineers' }
     ],
     tags: ['React', 'TypeScript', 'Next.js', 'GraphQL', 'Apollo Cache', 'AI Agents', 'WCAG AAA', 'Jest'],
-    docsUrl: 'https://www.sprinklr.com/help/articles/overview/what-is-the-ads-creative-management-app/65435e12b1f59867f3be1c96',
+    docsUrl: 'https://www.sprinklr.com/help/articles/creative-management/ads-creative-management-overview/',
     architectureDetails: {
       modelOrStack: 'React 18, Next.js SSR, Apollo GraphQL, Sprinklr Hyperspace Design System, Jest/RTL',
       keyChallenge: 'Managing multi-gigabyte media asset catalogs with diverse cross-platform aspect ratios, multi-tenant brand rules, and high concurrent user demands.',

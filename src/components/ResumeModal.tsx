@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Download, Copy, Check, ExternalLink, GraduationCap, Briefcase, Award, Code, Package } from 'lucide-react';
+import { X, Download, Copy, Check, Loader2, ExternalLink, GraduationCap, Briefcase, Award, Code, Package } from 'lucide-react';
 import { PERSONAL_INFO, EXPERIENCES, ACHIEVEMENTS, PROJECTS } from '../data/portfolioData';
 import { Tooltip } from './Tooltip';
 import { downloadResumePdf } from '../utils/generateResumePdf';
@@ -12,7 +12,7 @@ interface ResumeModalProps {
 
 export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => {
   const [copied, setCopied] = useState(false);
-  const [downloaded, setDownloaded] = useState(false);
+  const [downloadState, setDownloadState] = useState<'idle' | 'loading' | 'downloaded'>('idle');
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -34,10 +34,23 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
   if (!isOpen) return null;
 
-  const handleDownloadPdf = () => {
-    setDownloaded(true);
-    downloadResumePdf();
-    setTimeout(() => setDownloaded(false), 2500);
+  const handleDownloadPdf = async () => {
+    if (downloadState === 'loading') return;
+    setDownloadState('loading');
+    try {
+      const startTime = Date.now();
+      await downloadResumePdf();
+      const elapsed = Date.now() - startTime;
+      if (elapsed < 600) {
+        await new Promise((resolve) => setTimeout(resolve, 600 - elapsed));
+      }
+      setDownloadState('downloaded');
+      setTimeout(() => {
+        setDownloadState('idle');
+      }, 3000);
+    } catch {
+      setDownloadState('idle');
+    }
   };
 
   const handleCopyText = () => {
@@ -138,19 +151,42 @@ ACHIEVEMENTS:
                 </button>
               </Tooltip>
 
-              <Tooltip content={downloaded ? 'Resume PDF downloaded!' : 'Download official Resume PDF'}>
+              <Tooltip
+                content={
+                  downloadState === 'loading'
+                    ? 'Downloading official Resume PDF...'
+                    : downloadState === 'downloaded'
+                    ? 'Resume PDF downloaded!'
+                    : 'Download official Resume PDF'
+                }
+              >
                 <button
                   type="button"
                   onClick={handleDownloadPdf}
-                  aria-label="Download resume PDF"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-stone-900 text-stone-50 dark:bg-stone-100 dark:text-stone-900 text-xs font-semibold hover:bg-stone-800 dark:hover:bg-stone-200 transition-colors shadow-2xs"
+                  disabled={downloadState === 'loading'}
+                  aria-label={
+                    downloadState === 'loading'
+                      ? 'Downloading resume PDF...'
+                      : downloadState === 'downloaded'
+                      ? 'Resume PDF downloaded'
+                      : 'Download resume PDF'
+                  }
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-stone-900 text-stone-50 dark:bg-stone-100 dark:text-stone-900 text-xs font-semibold hover:bg-stone-800 dark:hover:bg-stone-200 disabled:opacity-85 transition-all shadow-2xs cursor-pointer disabled:cursor-wait"
                 >
-                  {downloaded ? (
+                  {downloadState === 'loading' ? (
+                    <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" />
+                  ) : downloadState === 'downloaded' ? (
                     <Check className="w-3.5 h-3.5 text-emerald-400 dark:text-emerald-600" aria-hidden="true" />
                   ) : (
                     <Download className="w-3.5 h-3.5" aria-hidden="true" />
                   )}
-                  <span>{downloaded ? 'Downloaded PDF' : 'Download PDF'}</span>
+                  <span>
+                    {downloadState === 'loading'
+                      ? 'Downloading...'
+                      : downloadState === 'downloaded'
+                      ? 'Downloaded PDF'
+                      : 'Download PDF'}
+                  </span>
                 </button>
               </Tooltip>
 

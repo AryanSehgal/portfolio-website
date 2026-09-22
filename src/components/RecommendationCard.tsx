@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Sparkles, ShieldCheck, Quote, Download, ExternalLink, CheckCircle2, Building2, FileText, Check } from 'lucide-react';
+import { Sparkles, ShieldCheck, Quote, Download, ExternalLink, CheckCircle2, Building2, FileText, Check, Loader2 } from 'lucide-react';
 import { RECOMMENDATION_DATA } from '../data/portfolioData';
 import { Tooltip } from './Tooltip';
 import { downloadLorPdf } from '../utils/generateLorPdf';
@@ -12,12 +12,23 @@ interface RecommendationCardProps {
 }
 
 export const RecommendationCard: React.FC<RecommendationCardProps> = ({ onOpenModal }) => {
-  const [downloaded, setDownloaded] = useState(false);
+  const [downloadState, setDownloadState] = useState<'idle' | 'loading' | 'downloaded'>('idle');
 
-  const handleDownload = () => {
-    downloadLorPdf();
-    setDownloaded(true);
-    setTimeout(() => setDownloaded(false), 4000);
+  const handleDownload = async () => {
+    if (downloadState === 'loading') return;
+    setDownloadState('loading');
+    try {
+      const startTime = Date.now();
+      await downloadLorPdf();
+      const elapsed = Date.now() - startTime;
+      if (elapsed < 600) {
+        await new Promise((resolve) => setTimeout(resolve, 600 - elapsed));
+      }
+      setDownloadState('downloaded');
+      setTimeout(() => setDownloadState('idle'), 3000);
+    } catch {
+      setDownloadState('idle');
+    }
   };
 
   return (
@@ -60,20 +71,40 @@ export const RecommendationCard: React.FC<RecommendationCardProps> = ({ onOpenMo
                 </div>
               </div>
 
-              {/* Action buttons: direct download via jsPDF */}
+              {/* Action buttons: direct download */}
               <div className="pt-2 flex flex-wrap items-center gap-3">
-                <Tooltip content="Instantly generate and download verified recommendation letter as PDF">
+                <Tooltip
+                  content={
+                    downloadState === 'loading'
+                      ? 'Downloading official Letter of Recommendation...'
+                      : downloadState === 'downloaded'
+                      ? 'LoR PDF downloaded!'
+                      : 'Download verified recommendation letter as PDF'
+                  }
+                >
                   <button
                     type="button"
                     id="recommendation-download-pdf-btn"
                     onClick={handleDownload}
-                    aria-label="Download official Letter of Recommendation as PDF"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-semibold text-xs sm:text-sm shadow-xs transition-colors"
+                    disabled={downloadState === 'loading'}
+                    aria-label={
+                      downloadState === 'loading'
+                        ? 'Downloading official Letter of Recommendation as PDF'
+                        : downloadState === 'downloaded'
+                        ? 'Downloaded official Letter of Recommendation PDF'
+                        : 'Download official Letter of Recommendation as PDF'
+                    }
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-sky-600 hover:bg-sky-500 disabled:opacity-85 text-white font-semibold text-xs sm:text-sm shadow-xs transition-colors cursor-pointer disabled:cursor-wait"
                   >
-                    {downloaded ? (
+                    {downloadState === 'loading' ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" />
+                        <span>Downloading...</span>
+                      </>
+                    ) : downloadState === 'downloaded' ? (
                       <>
                         <Check className="w-4 h-4 text-emerald-200" aria-hidden="true" />
-                        <span>Downloaded PDF!</span>
+                        <span>Downloaded PDF</span>
                       </>
                     ) : (
                       <>
