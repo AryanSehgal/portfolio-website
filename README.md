@@ -1,5 +1,6 @@
 # Aryan Sehgal — Applied AI & Full-Stack Systems Portfolio
 
+[![Live Portfolio](https://img.shields.io/badge/Live_Site-www.aryansehgal.online-0284c7?style=flat&logo=googlechrome&logoColor=white)](https://www.aryansehgal.online/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg?logo=typescript)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-19.x-61dafb.svg?logo=react)](https://react.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4.x-38bdf8.svg?logo=tailwindcss)](https://tailwindcss.com/)
@@ -9,6 +10,8 @@
 [![License](https://img.shields.io/badge/License-MIT-amber.svg)](LICENSE)
 
 An engineering portfolio and interactive systems dossier showcasing production applications, edge AI implementations, custom generative neural networks, and empirical machine learning research. Designed and developed by **Aryan Sehgal**, ex-Sprinklr Senior Product Engineer and Applied AI & Full-Stack Systems Engineer.
+
+🌐 **Live Website**: [https://www.aryansehgal.online/](https://www.aryansehgal.online/)
 
 ---
 
@@ -102,7 +105,7 @@ Includes the verified executive endorsement from **Mayank Hinger**, Vice Preside
 ```
 ├── public/
 │   ├── Aryan_Sehgal_Resume.pdf        # Authentic 3-page verified resume PDF
-│   ├── Sprinklr_LoR.pdf  # Authentic 2-page DocuSign verified LoR PDF
+│   ├── Mayank_Hinger_Sprinklr_LoR.pdf  # Authentic 2-page DocuSign verified LoR PDF
 │   ├── aryan-photo.jpg                # Portrait photograph
 │   └── favicon.png                    # Portfolio icon
 ├── scripts/
@@ -199,7 +202,7 @@ This portfolio is engineered in strict conformance with **WCAG 2.1 AA** standard
 
 ## 📬 Contact & Connect
 
-- **Portfolio**: [aryansehgal.online](https://aryansehgal.online)
+- **Live Website**: [https://www.aryansehgal.online/](https://www.aryansehgal.online/)
 - **Email**: [aryansehgal@aol.in](mailto:aryansehgal@aol.in)
 - **LinkedIn**: [linkedin.com/in/aryansehgal2001](https://linkedin.com/in/aryansehgal2001)
 - **GitHub**: [github.com/AryanSehgal](https://github.com/AryanSehgal)
