@@ -69,7 +69,7 @@ Class XII (Central Board of Secondary Education): 90%
 Class X (Central Board of Secondary Education): Perfect 10 CGPA
 
 WORK EXPERIENCE:
-1. Independent Engineering & Applied ML Development (October 2025 - Present)
+1. Independent Engineering & Applied ML Development (September 2025 - Present)
    - Published @aryan_sehgal/forma-ui on npm — 16 accessible React primitives with Radix UI and custom CSS tokens.
    - Architected Forma Visual Page Builder (AST canvas engine, multi-device viewports, zero-runtime export).
    - Built Edge AI Note Studio (client-side Whisper ASR and Flan-T5 summarization via ONNX Runtime Web & WebGPU).
@@ -268,7 +268,7 @@ ACHIEVEMENTS:
                   <span className="text-sm font-bold text-stone-900 dark:text-stone-100">
                     Independent Engineering & Applied ML Development
                   </span>
-                  <span className="text-xs font-mono text-stone-500">October 2025 - Present</span>
+                  <span className="text-xs font-mono text-stone-500">September 2025 - Present</span>
                 </div>
                 <div className="text-xs font-semibold text-stone-600 dark:text-stone-400">
                   Applied AI & Full-Stack Systems Engineer

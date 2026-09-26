@@ -53,7 +53,7 @@ export const EXPERIENCES: Experience[] = [
     role: 'Applied AI & Full-Stack Systems Engineer',
     company: 'Independent Engineering & Applied ML Development',
     location: 'Remote',
-    period: 'October 2025 - Present',
+    period: 'September 2025 - Present',
     isCurrent: true,
     summary: 'Delivering full-stack client applications with AI integrations, building open-source developer tooling, and implementing machine learning case studies from research literature.',
     bullets: [
