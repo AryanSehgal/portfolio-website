@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { BookOpen, LineChart, Cpu, BarChart3, Database, ExternalLink, GitBranch, Terminal, CheckCircle2 } from 'lucide-react';
+import { BookOpen, LineChart, Cpu, BarChart3, Database, ExternalLink, GitBranch, Terminal, CheckCircle2, TrendingUp, MousePointerClick } from 'lucide-react';
 import { CASE_STUDIES } from '../data/portfolioData';
 import { Tooltip } from './Tooltip';
 
@@ -33,6 +33,10 @@ export const CaseStudies: React.FC = () => {
         return <Database className="w-4 h-4 text-cyan-500 shrink-0" aria-hidden="true" />;
       case 'midi-music-generator':
         return <Cpu className="w-4 h-4 text-fuchsia-500 shrink-0" aria-hidden="true" />;
+      case 'predicting-sales-from-campaign-data':
+        return <TrendingUp className="w-4 h-4 text-emerald-500 shrink-0" aria-hidden="true" />;
+      case 'ad-click-prediction-case-study':
+        return <MousePointerClick className="w-4 h-4 text-sky-500 shrink-0" aria-hidden="true" />;
       default:
         return <BarChart3 className="w-4 h-4 text-sky-500 shrink-0" aria-hidden="true" />;
     }

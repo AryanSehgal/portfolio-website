@@ -60,13 +60,13 @@ export const EXPERIENCES: Experience[] = [
       'Published @aryan_sehgal/forma-ui to npm — a 16-component accessible React component library with Radix primitives, custom CSS tokens, live documentation, and axe-core validation.',
       'Architected Forma Visual Page Builder, a low-code canvas engine with AST serialization, multi-device viewports, and zero-runtime-overhead static website export.',
       'Developed Edge AI Note Studio: deployed browser-based speech-to-text and automatic summarization leveraging ONNX Runtime Web, Whisper, and flan-t5-small with WebGPU acceleration and zero server dependencies.',
-      'Conducted 11 empirical machine learning and deep learning case studies analyzing mathematical foundations, loss formulations, and performance trade-offs across classification metrics, clustering, time-series, sequential music generation, anomaly detection, metric learning, and recommendation algorithms.'
+      'Conducted 13 empirical machine learning and deep learning case studies analyzing mathematical foundations, loss formulations, and performance trade-offs across classification metrics, clustering, time-series, sequential music generation, anomaly detection, metric learning, and recommendation algorithms.'
     ],
     technologies: ['React 19', 'TypeScript', 'ONNX Runtime', 'WebGPU', 'Tailwind CSS', 'Radix Primitives', 'PyTorch', 'Python', 'Jupyter'],
     verifiedImpact: [
       'Published npm package @aryan_sehgal/forma-ui with 16 accessible UI primitives',
       'Engineered sub-5ms on-device vector and speech inference pipeline',
-      'Completed 11 rigorous empirical machine learning case study repositories'
+      'Completed 13 rigorous empirical machine learning case study repositories'
     ]
   },
   {
@@ -651,6 +651,58 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     notebookUrl: 'https://github.com/AryanSehgal/midi-music-generator',
     datasetSource: 'Classical Piano MIDI Dataset parsed with music21'
+  },
+  {
+    id: 'predicting-sales-from-campaign-data',
+    title: 'Predicting Sales from Campaign Data',
+    subtitle: 'Influencer Campaign Regression: Huber Loss, Data Cleaning & Calibrated Prediction Intervals',
+    problemStatement: 'Clean and transform 8,000 messy training records (mixed units like "£5,000" and "3.2%", inconsistent "120k" follower scales, missing values, and corrupted outliers) to evaluate ten regression approaches and predict unit sales for 2,000 test campaigns.',
+    mathematicalFoundations: [
+      'Huber Loss robust formulation: L_δ(a) = 0.5 a^2 for |a| ≤ δ, and δ(|a| - 0.5 δ) otherwise (calibrated at δ = 1.2, α = 0.0001)',
+      'Non-parametric prediction interval calibration: empirical conformal residuals achieving 88.4% holdout coverage (90.6% on complete inputs)',
+      'Outlier detection via IQR bounds: learned thresholds from each fold using Q3 + 10 × IQR to preserve extreme reach signals',
+      'L2 Ridge regression objective: min_w ||Xw - y||_2^2 + α ||w||_2^2 across 5-fold cross-validation splits'
+    ],
+    algorithmsUsed: ['Huber Robust Regressor (ε=1.2, α=0.0001)', 'L2 Ridge Regression with Feature Engineering', 'Random Forest & Histogram Gradient Boosting', 'Calibrated Prediction Interval Estimator'],
+    metricsTable: [
+      { metric: 'Holdout RMSE', score: '2,156.6 units', benchmark: '-23.5% reduction vs mean baseline (2,820)' },
+      { metric: 'Holdout MAE', score: '1,691.7 units', benchmark: 'Baseline MAE: 2,249.6 units' },
+      { metric: 'Holdout R²', score: '0.415', benchmark: 'Balanced 15-fold CV R²: 0.492' },
+      { metric: 'Prediction Interval Coverage', score: '88.4% (Holdout)', benchmark: '90.6% on clean inputs (90% target)' }
+    ],
+    insights: [
+      'Followers and advertising spend carry the dominant predictive information, far outranking content quality and engagement rate in holdout permutation importance.',
+      'Linear and robust additive models generalized better than complex non-linear tree ensembles (Random Forest, Extra Trees, HistGradientBoosting), which suffered from validation overfitting.',
+      'Data cleaning assumptions drove substantial variance: converting ambiguous bare follower numbers from thousands improved development CV over literal retention or imputation.'
+    ],
+    notebookUrl: 'https://github.com/AryanSehgal/predicting-sales-from-campaign-data',
+    datasetSource: 'Influencer Marketing Campaign Dataset (8,000 Labeled Records, 2,000 Test Records)'
+  },
+  {
+    id: 'ad-click-prediction-case-study',
+    title: 'Ad Click Prediction (CTR Estimation)',
+    subtitle: 'Temporal Holdout Validation, Historical Feature Engineering & Calibrated XGBoost',
+    problemStatement: 'Predict binary ad click probability (is_click) on 463,291 impression events across July 2–7, 2017 with 6.76% base CTR, strictly preventing temporal target leakage while evaluating historical user/product priors and probability calibration.',
+    mathematicalFoundations: [
+      'Binary Cross-Entropy Log Loss: L_{CE} = - 1/N ∑ [y_i log(p_i) + (1 - y_i) log(1 - p_i)] on chronological streams',
+      'Sigmoid Platt probability calibration: P(Y=1 | f) = 1 / (1 + exp(A · f + B)) tuned on held-out calibration day (July 6)',
+      'Grouped permutation feature importance: Δ Loss = L(X_{perm, G}, y) - L(X, y) isolating user vs. ad contextual effects',
+      'Area Under ROC (ROC-AUC) & Precision-Recall Average Precision (PR-AP) with frozen threshold (~0.0678)'
+    ],
+    algorithmsUsed: ['XGBoost Classifier with Historical Context Pointers', 'Sigmoid Probability Calibration (Platt Scaling)', 'SMOTENC Mixed-Variable Oversampling Benchmark', 'Class-Weighted Random Forest Baseline'],
+    metricsTable: [
+      { metric: 'Holdout ROC-AUC (July 7)', score: '0.6013', benchmark: 'Forward temporal holdout' },
+      { metric: 'Decile Lift (Top 10%)', score: '1.63x', benchmark: '1.63x baseline click concentration' },
+      { metric: 'Average Precision (PR-AP)', score: '0.0841', benchmark: '6.76% base click rate' },
+      { metric: 'Dataset Scale', score: '592,149 Impressions', benchmark: '463k train + 128k test' }
+    ],
+    insights: [
+      'Strict forward-time chronological splitting is critical: random k-fold cross-validation drastically overestimates performance by leaking future user history into training impressions.',
+      'Incorporating historical user engagement bundles provided the largest single performance leap (+0.0475 ROC-AUC), confirming user behavioral history is the primary predictive driver.',
+      'Controlled SMOTENC oversampling added 92 false negatives while reducing average precision by 0.0036 and increasing compute by 20%, proving class-weighted loss is preferable to synthetic sampling.'
+    ],
+    notebookUrl: 'https://github.com/AryanSehgal/ad-click-prediction-case-study',
+    datasetSource: 'Ad Impression Clickstream Dataset (July 2–9, 2017, 592k Total Rows)'
   }
 ];
 
